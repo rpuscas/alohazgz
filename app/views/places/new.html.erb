@@ -1,0 +1,43 @@
+<%= form_for(@place) do |f| %>
+
+	<%= f.label "Nombre" %>
+	<%= f.text_field :name, class: '' %>
+
+	<%= f.label "Direccion" %>
+	<%= f.text_field :address, class: '' %>
+
+	<%= f.label "CP" %>
+	<%= f.text_field :postal, class: '' %>
+
+	<%= f.label "Telefono" %>
+	<%= f.text_field :phone, class: '' %>
+
+	<%= f.label "Email" %>
+	<%= f.text_field :email, class: '' %>
+
+	<%= f.label "Web de la empresa" %>
+	<%= f.text_field :url, class: '' %>
+
+	<%= f.label "Categoria" %>
+	<%= f.text_field :categoria, class: '' %>
+
+	<%= f.label "Habitaciones" %>
+	<%= f.text_field :habitaciones, class: '' %>
+
+	<%= f.label "Camas" %>
+	<%= f.text_field :camas, class: '' %>
+
+	<%= f.label "Latitud" %>
+	<%= f.text_field :latitude, class: '' %>
+
+	<%= f.label "Longitud" %>
+	<%= f.text_field :longitude, class: '' %>
+
+	<%= f.label "Accesibilidad" %>
+	<%= f.text_area :accesibilidad, class: '' %>
+
+	<%= f.label "Comentarios" %>
+	<%= f.text_area :comment, class: '' %>
+
+	<%= f.submit "Añadir", class: "" %>
+<% end %>
