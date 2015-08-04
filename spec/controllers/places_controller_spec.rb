@@ -14,6 +14,23 @@ RSpec.describe PlacesController, :type => :controller do
     end
   end
 
+  describe "GET 'show'" do
+    render_views
+    
+    before(:each) do
+      @place = FactoryGirl.create(:place)
+      get :show, {:id => @place.id}
+    end
+
+    it "returns http success" do
+      expect(response).to be_success
+    end
+
+    it "contains place name" do
+      expect(response.body).to include(@place.name)
+    end
+  end
+
   describe "GET 'new'" do
     before(:each) do
       get :new

@@ -1,43 +1,69 @@
 <%= form_for(@place) do |f| %>
 
-	<%= f.label "Nombre" %>
-	<%= f.text_field :name, class: '' %>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">	
+		<%= f.text_field :name, class: 'mdl-textfield__input', id: 'name' %>
+		<%= f.label "Nombre", class: 'mdl-textfield__label', for: 'name' %>
+    </div><br>
 
-	<%= f.label "Direccion" %>
-	<%= f.text_field :address, class: '' %>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<%= f.text_field :address, class: 'mdl-textfield__input', id: 'address'  %>
+		<%= f.label "Direccion", class: 'mdl-textfield__label', for: 'address' %>
+	</div><br>
 
-	<%= f.label "CP" %>
-	<%= f.text_field :postal, class: '' %>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<%= f.text_field :postal, class: 'mdl-textfield__input', id: 'postal'  %>
+		<%= f.label "CP", class: 'mdl-textfield__label', for: 'postal' %>
+	</div><br>
 
-	<%= f.label "Telefono" %>
-	<%= f.text_field :phone, class: '' %>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<%= f.text_field :phone, class: 'mdl-textfield__input', id: 'phone'  %>
+		<%= f.label "Telefono", class: 'mdl-textfield__label', for: 'phone' %>
+	</div><br>
 
-	<%= f.label "Email" %>
-	<%= f.text_field :email, class: '' %>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<%= f.text_field :email, class: 'mdl-textfield__input', id: 'email' %>
+		<%= f.label "Email", class: 'mdl-textfield__label', for: 'email' %>
+	</div><br>
 
-	<%= f.label "Web de la empresa" %>
-	<%= f.text_field :url, class: '' %>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<%= f.text_field :url, class: 'mdl-textfield__input', id: 'url'  %>
+		<%= f.label "Web de la empresa", class: 'mdl-textfield__label', for: 'url' %>
+	</div><br>
 
-	<%= f.label "Categoria" %>
-	<%= f.text_field :categoria, class: '' %>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<%= f.text_field :categoria, class: 'mdl-textfield__input', id: 'categoria'  %>
+		<%= f.label "Categoria", class: 'mdl-textfield__label', for: 'categoria' %>
+	</div><br>
 
-	<%= f.label "Habitaciones" %>
-	<%= f.text_field :habitaciones, class: '' %>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<%= f.text_field :habitaciones, class: 'mdl-textfield__input', id: 'habitaciones'  %>
+		<%= f.label "Habitaciones", class: 'mdl-textfield__label', for: 'habitaciones' %>
+	</div><br>
 
-	<%= f.label "Camas" %>
-	<%= f.text_field :camas, class: '' %>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<%= f.text_field :camas, class: 'mdl-textfield__input', id: 'camas'  %>
+		<%= f.label "Camas", class: 'mdl-textfield__label', for: 'camas' %>
+	</div><br>
 
-	<%= f.label "Latitud" %>
-	<%= f.text_field :latitude, class: '' %>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<%= f.text_field :latitude, class: 'mdl-textfield__input', id: 'latitude'  %>
+		<%= f.label "Latitud", class: 'mdl-textfield__label', for: 'latitude' %>
+	</div><br>
 
-	<%= f.label "Longitud" %>
-	<%= f.text_field :longitude, class: '' %>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<%= f.text_field :longitude, class: 'mdl-textfield__input', id: 'longitude'  %>
+		<%= f.label "Longitud", class: 'mdl-textfield__label', for: 'longitude' %>
+	</div><br>
 
-	<%= f.label "Accesibilidad" %>
-	<%= f.text_area :accesibilidad, class: '' %>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<%= f.text_area :accesibilidad, class: 'mdl-textfield__input', id: 'accesibilidad', rows: '5'  %>
+		<%= f.label "Accesibilidad", class: 'mdl-textfield__label', for: 'accesibilidad' %>
+	</div><br>
 
-	<%= f.label "Comentarios" %>
-	<%= f.text_area :comment, class: '' %>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<%= f.text_area :comment, class: 'mdl-textfield__input', id: 'comment', rows: '5'  %>
+		<%= f.label "Comentarios", class: 'mdl-textfield__label', for: 'comment' %>
+	</div><br>
 
-	<%= f.submit "Añadir", class: "" %>
+	<%= f.submit "Añadir", class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" %>
 <% end %>
