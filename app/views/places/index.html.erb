@@ -1,18 +1,36 @@
-<h2>Alojamientos</h2>
 
-<%= link_to "Hoteles", filter_hoteles_path %>
-<%= link_to "Hostales", filter_hostales_path %>
-<%= link_to "Albergues", filter_albergues_path %>
-<%= link_to "Pensiones", filter_pensiones_path %>
-<%= link_to "Apartamentos", filter_aparts_path %>
-<ul>
   <% @places.each do |place| %>
-  	<li>
-  		<%= link_to place.name, place %> | <%= link_to "EDITAR", edit_place_path(place) %>
-  		<br>
-  		<%= image_tag place.img, size: "80x80" %>
+  	
   		
+		<div class="mdl-card mdl-shadow--2dp demo-card-square">
+		  <div class="mdl-card__title mdl-card--expand" style="background: url(<%= place.img %>) bottom right 15% no-repeat #46B6AC; background-size: cover">
+		    <%= link_to place.name, place, style: "margin-top: 100px; color: #FFFFFF; text-decoration: none;font-weight: bold;" %>
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		  	<%= place.address %>
+		  	<br><br>
+		    <%= place.phone %>
+		  </div>
+		  <div class="mdl-card__actions mdl-card--border">
+		    
+		    <%= link_to "EDITAR", edit_place_path(place), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+		    
+		  </div>
+		</div>
+
+		<style>
+		  .demo-card-square.mdl-card {
+		    width: 320px;
+		    height: 320px;
+		    float: right;
+		    margin: 40px 80px 0px 30px;
+		  }
+		  .demo-card-square > .mdl-card__title {
+		    color: #fff;
+		  }
+		</style>
   		
-  	</li>
+  	
   <% end %>
-</ul>
+
+

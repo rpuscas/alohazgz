@@ -8,12 +8,43 @@
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.indigo-pink.min.css">
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  
 
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row"  style="height: 80px;">
+      <!-- Title -->
+     <h1 style="margin-left: auto; margin-right: auto;font-family: 'Raleway', sans-serif;font-style: oblique; font-weight: 100;">Aloha ZgZ</h1>
+      
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title" style="font-family: 'Raleway', sans-serif;">Categorias</span>
+    <nav class="mdl-navigation">
+      <%= link_to "Hoteles", filter_hoteles_path, class: "categorias" %>
+      <hr>
+      <%= link_to "Hostales", filter_hostales_path,class: "categorias" %>
+      <hr>
+   	  <%= link_to "Albergues", filter_albergues_path,class: "categorias" %>
+   	  <hr>
+	  <%= link_to "Pensiones", filter_pensiones_path,class: "categorias" %>
+	  <hr>
+	  <%= link_to "Apartamentos", filter_aparts_path,class: "categorias" %>
+    </nav>
 
-<%= yield %>
+  </div>
+  <main class="mdl-layout__content" style="margin: 0 auto; width: 100%">
+    <div class="page-content">
+    	<%= yield %>
+    </div>
+  </main>
+</div>
+
 
 </body>
 </html>
