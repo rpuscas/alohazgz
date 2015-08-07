@@ -3,6 +3,8 @@
 <ul>
   <% @places.each do |place| %>
   	<li>
+  		<%= image_tag place.img, size: "80x80" %>
+  		<br>
   		<%= link_to place.name, place %>
   	</li>
   <% end %>
