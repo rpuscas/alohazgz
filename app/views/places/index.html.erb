@@ -1,5 +1,10 @@
 <h2>Alojamientos</h2>
 
+<%= link_to "Hoteles", filter_hoteles_path %>
+<%= link_to "Hostales", filter_hostales_path %>
+<%= link_to "Albergues", filter_albergues_path %>
+<%= link_to "Pensiones", filter_pensiones_path %>
+<%= link_to "Apartamentos", filter_aparts_path %>
 <ul>
   <% @places.each do |place| %>
   	<li>
