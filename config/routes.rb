@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'filter_albergues' => 'places#filter_albergues'
   get 'filter_pensiones' => 'places#filter_pensiones'
   get 'filter_aparts' => 'places#filter_aparts'
+  get 'ver_mapa' => 'places#mapa'
 end

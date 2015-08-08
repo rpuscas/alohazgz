@@ -2,13 +2,16 @@
 <html>
 <head>
   <title>AlohaZgZ | El mejor sitio para encontrar alojamiento en Zaragoza</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application'%>
 
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.indigo-pink.min.css">
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?v=3.exp">
+  </script>
   
 
   <%= csrf_meta_tags %>
@@ -17,29 +20,32 @@
 <!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
+   
     <div class="mdl-layout__header-row"  style="height: 80px;">
       <!-- Title -->
-     <h1 style="margin-left: auto; margin-right: auto;font-family: 'Raleway', sans-serif;font-style: oblique; font-weight: 100;">Aloha ZgZ</h1>
+     <h1 class="titulo"><%= link_to "Aloha ZgZ", places_path, style: "text-decoration: none;color: white;" %></h1>
       
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title" style="font-family: 'Raleway', sans-serif;">Categorias</span>
     <nav class="mdl-navigation">
-      <%= link_to "Hoteles", filter_hoteles_path, class: "categorias" %>
-      <hr>
-      <%= link_to "Hostales", filter_hostales_path,class: "categorias" %>
-      <hr>
-   	  <%= link_to "Albergues", filter_albergues_path,class: "categorias" %>
-   	  <hr>
-	  <%= link_to "Pensiones", filter_pensiones_path,class: "categorias" %>
-	  <hr>
-	  <%= link_to "Apartamentos", filter_aparts_path,class: "categorias" %>
+      <%= link_to "Hoteles", filter_hoteles_path, class: "mdl-button mdl-js-button mdl-js-ripple-effect cate", style: "color: #4154FF; font-weight: bold;font-family: 'Raleway', sans-serif; text-align: left;" %>
+      
+      <%= link_to "Hostales", filter_hostales_path,class: "mdl-button mdl-js-button mdl-js-ripple-effect", style: "color: #4154FF; font-weight: bold;font-family: 'Raleway', sans-serif;text-align: left;"  %>
+      
+   	  <%= link_to "Albergues", filter_albergues_path,class: "mdl-button mdl-js-button mdl-js-ripple-effect", style: "color: #4154FF; font-weight: bold;font-family: 'Raleway', sans-serif;text-align: left;"  %>
+   	  
+	  <%= link_to "Pensiones", filter_pensiones_path,class: "mdl-button mdl-js-button mdl-js-ripple-effect", style: "color: #4154FF; font-weight: bold;font-family: 'Raleway', sans-serif;text-align: left;"  %>
+	  
+	  <%= link_to "Apartamentos", filter_aparts_path,class: "mdl-button mdl-js-button mdl-js-ripple-effect", style: "color: #4154FF; font-weight: bold;font-family: 'Raleway', sans-serif;text-align: left;"  %>
+
+    <%= link_to "Ver Mapa", ver_mapa_path,class: "mdl-button mdl-js-button mdl-js-ripple-effect", style: "color: #4154FF; font-weight: bold;font-family: 'Raleway', sans-serif;text-align: left;"  %>
     </nav>
 
   </div>
-  <main class="mdl-layout__content" style="margin: 0 auto; width: 100%">
-    <div class="page-content">
+  <main class="mdl-layout__content">
+    <div class="page-content" style="margin: 0 auto">
     	<%= yield %>
     </div>
   </main>

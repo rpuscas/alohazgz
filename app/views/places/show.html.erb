@@ -1,3 +1,14 @@
-<h2><%= @place.name %></h2>
+<div class="contenedor">
+  <%= image_tag @place.img, size:"600x300" %>
+  <h2><%= @place.name %></h2>
+  <p><%= @place.comment %></p>
+  <p><%= @place.accesibilidad %></p>
+  <h4>Contacto</h4>
+  <p><%= @place.address %></p>
+  <p><%= @place.postal %></p>
+  <p><%= @place.phone %></p>
+  <p><%= @place.email %></p>
+  <p><a href="<%= @place.url %>"><%= @place.url %></a></p>
+  
+</div>
 
-<%= image_tag @place.img, size:"600x300" %>

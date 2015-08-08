@@ -60,6 +60,10 @@ class PlacesController < ApplicationController
 		render 'index'
 	end
 
+	def mapa
+		@places = Place.all
+		render 'mapa'
+	end
 
 	private
       def place_params

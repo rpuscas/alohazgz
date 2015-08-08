@@ -2,8 +2,17 @@
  *= require_tree .
  *= require_self
  */
-
- .categorias{
- 	text-decoration: none;
+ .contenedor{
+ 	width: 1300px;
+ 	margin: 10px auto;
  }
+
+ .titulo{
+ 	margin-left: auto; 
+ 	margin-right: auto;
+ 	font-family: 'Raleway', sans-serif;
+ 	font-style: oblique; 
+ 	font-weight: 100;
+ }
+
 
