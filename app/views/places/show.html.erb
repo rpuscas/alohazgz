@@ -1,14 +1,61 @@
 <div class="contenedor">
-  <%= image_tag @place.img, size:"600x300" %>
-  <h2><%= @place.name %></h2>
-  <p><%= @place.comment %></p>
-  <p><%= @place.accesibilidad %></p>
-  <h4>Contacto</h4>
-  <p><%= @place.address %></p>
-  <p><%= @place.postal %></p>
-  <p><%= @place.phone %></p>
-  <p><%= @place.email %></p>
-  <p><a href="<%= @place.url %>"><%= @place.url %></a></p>
+  <%= link_to "EDITAR", edit_place_path(@place), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+<div>
+  <div style="float: left; width: 50%;margin-top: 35px;"><%= image_tag @place.img, size:"600x300" %>
   
-</div>
+  </div>
+  <div style="float: left; width: 50%;">
+    <h3 id="coor" data-lati="<%= @place.latitude %>" data-longi="<%= @place.longitude %>" ><%= @place.name %></h3>
+    <p><%= @place.comment %></p>
 
+  </div>
+</div>
+<div style="clear: both;"></div>
+<div>
+  <div style="float: left; width: 50%;margin-top: 35px;">
+  <div id="map-canvas" style="height: 420px;width: 600px; margin-top: 30px; padding: 0;"></div>
+  
+  </div>
+  <div style="float: left; width: 50%;margin-top: 20px;">
+    
+    <div style="margin-top: 50px;" id="acces" data-acces="<%= @place.accesibilidad %>"></div>
+
+    <h4>Contacto</h4>
+    <p><%= @place.address %></p>
+    <p><%= @place.postal %></p>
+    <p><%= @place.phone %></p>
+    <p><%= @place.email %></p>
+    <p><a href="<%= @place.url %>"><%= @place.url %></a></p>
+</div>
+</div>
+<script type="text/javascript">
+  var content = $('#acces').data("acces");
+  $('#acces').html(content);
+</script>
+
+<script type="text/javascript">
+  var imagen = $('#acces').find('img');
+  imagen[0].src = "http://www.zaragoza.es/cont/paginas/sinbarreras/img/icono_silla1.jpg";
+</script>
+
+<script type="text/javascript">
+    function initialize() {
+      var place = $('#coor');
+      var lat = place.data("lati");
+      var longi = place.data("longi");
+      var posicion = new google.maps.LatLng(lat, longi)
+      var mapOptions = {
+        center: posicion,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById('map-canvas'),
+          mapOptions);
+      var marker = new google.maps.Marker({
+      position: posicion,
+      map: map,
+      icon: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/images/marker-icon.png'
+      });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>

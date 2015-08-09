@@ -1,6 +1,7 @@
 class Place < ActiveRecord::Base
 
   before_save :geolocalize
+  self.per_page = 9
 
   private
 
