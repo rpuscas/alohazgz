@@ -1,32 +1,33 @@
 <div class="contenedor">
   <%= link_to "EDITAR", edit_place_path(@place), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
-<div>
-  <div style="float: left; width: 50%;margin-top: 35px;"><%= image_tag @place.img, size:"600x300" %>
-  
-  </div>
-  <div style="float: left; width: 50%;">
-    <h3 id="coor" data-lati="<%= @place.latitude %>" data-longi="<%= @place.longitude %>" ><%= @place.name %></h3>
-    <p><%= @place.comment %></p>
-
-  </div>
-</div>
-<div style="clear: both;"></div>
-<div>
-  <div style="float: left; width: 50%;margin-top: 35px;">
-  <div id="map-canvas" style="height: 420px;width: 600px; margin-top: 30px; padding: 0;"></div>
-  
-  </div>
-  <div style="float: left; width: 50%;margin-top: 20px;">
+  <div class="mdl-grid" class="mdl-cell mdl-cell--6-col">
+    <div style="margin-top: 35px;"><%= image_tag @place.img, size:"600x300" %>
     
-    <div style="margin-top: 50px;" id="acces" data-acces="<%= @place.accesibilidad %>"></div>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col">
+      <h3 id="coor" data-lati="<%= @place.latitude %>" data-longi="<%= @place.longitude %>" ><%= @place.name %></h3>
+      <p><%= @place.comment %></p>
 
-    <h4>Contacto</h4>
-    <p><%= @place.address %></p>
-    <p><%= @place.postal %></p>
-    <p><%= @place.phone %></p>
-    <p><%= @place.email %></p>
-    <p><a href="<%= @place.url %>"><%= @place.url %></a></p>
-</div>
+    </div>
+  </div>
+  
+  <div class="mdl-grid">
+    <div style="margin-top: 35px;" class="mdl-cell mdl-cell--6-col">
+      <div id="map-canvas" style="height: 420px;width: 600px; margin-top: 30px; padding: 0;"></div>
+    
+    </div>
+    <div style="margin-top: 20px;" class="mdl-cell mdl-cell--6-col">
+      
+      <div style="margin-top: 50px;" id="acces" data-acces="<%= @place.accesibilidad %>"></div>
+
+      <h4>Contacto</h4>
+      <p><%= @place.address %></p>
+      <p><%= @place.postal %></p>
+      <p><%= @place.phone %></p>
+      <p><%= @place.email %></p>
+      <p><a href="<%= @place.url %>"><%= @place.url %></a></p>
+    </div>
+  </div>
 </div>
 <script type="text/javascript">
   var content = $('#acces').data("acces");
