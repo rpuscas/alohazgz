@@ -2,11 +2,11 @@
  *= require_tree .
  *= require_self
  */
- .contenedor{
+ /*.contenedor{
  	width: 1300px;
  	min-height: 1270px;
  	margin: 10px auto;
- }
+ }*/
 
  .titulo{
  	margin-left: auto; 
@@ -21,10 +21,10 @@
  	margin-right: auto;
  }
 
- .pagin{
+ /*.pagin{
  	width: 1300px;
  	margin: 10px auto 60px auto;
- }
+ }*/
 
  .digg_pagination {
   background: white;
