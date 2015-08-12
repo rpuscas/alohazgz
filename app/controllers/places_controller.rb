@@ -46,17 +46,22 @@ class PlacesController < ApplicationController
 	end
 
 	def filter_albergues
-		@places = Place.where("categoria like '%alberg%'").paginate(:page => params[:page])
+		@places = Place.where("categoria like '%lberg%'").paginate(:page => params[:page])
 		render 'index'
 	end
 
 	def filter_pensiones
-		@places = Place.where("categoria like '%pensi%'").paginate(:page => params[:page])
+		@places = Place.where("categoria like '%ensi%'").paginate(:page => params[:page])
 		render 'index'
 	end
 
 	def filter_aparts
-		@places = Place.where("categoria like '%apart%'").paginate(:page => params[:page])
+		@places = Place.where("categoria like '%partam%'").paginate(:page => params[:page])
+		render 'index'
+	end
+
+	def filter_campings
+		@places = Place.where("categoria like '%amping%'").paginate(:page => params[:page])
 		render 'index'
 	end
 
