@@ -9,7 +9,7 @@
     </div>
     <div class="mdl-cell mdl-cell--6-col">
       <h3 id="coor" data-lati="<%= @place.latitude %>" data-longi="<%= @place.longitude %>" ><%= @place.name %></h3>
-      <p><%= @place.comment %></p>
+      <p id="comm" data-comment="<%= @place.comment %>"></p>
 
     </div>
   </div>
@@ -33,8 +33,10 @@
   </div>
 </div>
 <script type="text/javascript">
-  var content = $('#acces').data("acces");
-  $('#acces').html(content);
+  var content1 = $('#acces').data("acces");
+  $('#acces').html(content1);
+  var content2 = $('#comm').data("comment");
+  $('#comm').html(content2);
 </script>
 
 <script type="text/javascript">
