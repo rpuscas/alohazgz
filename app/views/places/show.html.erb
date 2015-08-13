@@ -1,10 +1,10 @@
 <div class="contenedor">
-  <%= link_to "EDITAR", edit_place_path(@place), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
-  <div class="mdl-grid" class="mdl-cell mdl-cell--6-col">
+  
+  <div class="mdl-grid">
     <% if @place.img.eql? "http://www.zaragoza.es" 
-          @place.img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyUHLQP8V6GaNgCEzezpBajE6KGU3S9NdSlmwSb-wn_QKGe-41-g" 
+          @place.img = "http://www.abiertodeaccion.org/wp-content/uploads/2015/01/rental-property-no-photo-available.jpg" 
          end %>
-    <div style="margin-top: 35px;"><%= image_tag @place.img, size:"600x300" %>
+    <div  class="mdl-cell mdl-cell--6-col" style="margin-top: 35px;"><%= image_tag @place.img, size:"600x300" %>
     
     </div>
     <div class="mdl-cell mdl-cell--6-col">

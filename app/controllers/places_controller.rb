@@ -8,32 +8,32 @@ class PlacesController < ApplicationController
 		@place = Place.find(params[:id])
 	end
 
-	def new
-		@place = Place.new
-	end
+	# def new
+	# 	@place = Place.new
+	# end
 
-	def create
-		@place = Place.new(place_params)
+	# def create
+	# 	@place = Place.new(place_params)
 
-	    if @place.save
-	      redirect_to @place
-	    else
-	      render 'new'
-	    end
-	end
+	#     if @place.save
+	#       redirect_to @place
+	#     else
+	#       render 'new'
+	#     end
+	# end
 
-	def edit
-		@place = Place.find(params[:id])
-	end
+	# def edit
+	# 	@place = Place.find(params[:id])
+	# end
 
-	def update
-		@place = Place.find(params[:id])
-		if @place.update_attributes(place_params)
-			redirect_to @place
-		else
-			render 'edit'
-		end
-	end
+	# def update
+	# 	@place = Place.find(params[:id])
+	# 	if @place.update_attributes(place_params)
+	# 		redirect_to @place
+	# 	else
+	# 		render 'edit'
+	# 	end
+	# end
 
 	def filter_hoteles
 		@places = Place.where("categoria like '%otel%'").paginate(:page => params[:page])

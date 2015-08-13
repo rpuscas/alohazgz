@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'places#index'
-  resources :places
+  resources :places, only: [:index, :show]
 
   get 'filter_hoteles' => 'places#filter_hoteles'
   get 'filter_hostales' => 'places#filter_hostales'
